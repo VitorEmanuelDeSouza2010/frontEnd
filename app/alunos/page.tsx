@@ -12,7 +12,7 @@ export default async function AlunosPage() {
             <div className="w-[90%] h-100 bg-white rounded-md shadow-md shadow-white text-black p-2 overflow-auto">
                 <ul className="flex flex-col items-center gap-2">
                     <AlunoItem id={1} nome="////|/|\|\\\\"/>
-                    <AlunoItem id={2} nome="|\|/|"/>
+                    <AlunoItem id={2} nome="| | | | | | |"/>
                     <AlunoItem id={3} nome="\\\\|/|\|////"/>
                     <AlunoItem id={4} nome="|\|/|"/>
                     <AlunoItem id={5} nome="|/|\|"/>
