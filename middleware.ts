@@ -1,0 +1,27 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { jwtVerify } from "jose";
+
+export function middleware(request: NextRequest) {
+    const token = request.cookies.get("access_token")?.value;
+
+    console.log(token);
+
+    if(!token) {
+        return NextResponse.redirect(new URL("/login", request.url));
+    }
+
+    try {
+        jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET));
+        console.log("Token válido");
+        return NextResponse.next();
+    } catch {
+        console.log("Token inválido");
+        console.error(e);
+        return NextResponse.redirect(new URL("/login", request.url));
+    }
+}
+
+export const config = {
+    matcher: ["/", "/alunos", "/aluno/:path*"],
+};

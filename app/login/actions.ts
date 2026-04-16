@@ -1,16 +1,26 @@
-"use server";
+"use server"
 
-export async function loginAction(email: string, password: string) {
-    const response = await fetch("http://localhost:8080/funcionarios/login", {
+import { cookies } from "next/headers";
+
+export async function loginAction (email: string, password: string) {
+    const response = await fetch("http://localhost:8080/funcionrios/login", {
         method: "POST",
         headers: {
-            "headers-type": "application/json",
+            "Content-Type": "application/json",
         },
-            body: JSON.stringify({
+        body: JSON.stringify({
             email,
-            senha:password,
-        }),
-    }).then(res => res.json());
+            senha: password,
+        })
+    });
 
-    console.log(response);
+    const data = await response.json();
+
+    if (response.status === 200) {
+        const cookiesStore = await cookies();
+        cookiesStore.set("access_token", data.access_token);
+        return;
+    }
+
+    return data;
 }
