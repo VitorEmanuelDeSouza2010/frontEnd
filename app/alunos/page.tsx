@@ -1,7 +1,9 @@
 import AlunoItem from "@/components/AlunoItem";
 
+import { getAlunos } from "./actions";
+
 export default async function AlunosPage() {
-    const alunos = await fetch("http://localhost:8080/alunos").then((res) => res.json());
+    const alunos = await getAlunos();
 
     console.log(alunos);
 

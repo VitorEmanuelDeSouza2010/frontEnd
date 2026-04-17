@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
         jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET));
         console.log("Token válido");
         return NextResponse.next();
-    } catch {
+    } catch (e) {
         console.log("Token inválido");
         console.error(e);
         return NextResponse.redirect(new URL("/login", request.url));

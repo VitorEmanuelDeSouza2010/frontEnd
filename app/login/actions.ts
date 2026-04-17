@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 
 export async function loginAction (email: string, password: string) {
-    const response = await fetch("http://localhost:8080/funcionrios/login", {
+    const response = await fetch("http://localhost:8080/funcionarios/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
