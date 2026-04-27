@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
 
@@ -26,6 +27,7 @@ export async function createAluno(aluno: CreateAluno) {
     const data = await response.json();
 
     if (response.status === 201) {
+        revalidateTag("listar", "max");
         return;
     }
 

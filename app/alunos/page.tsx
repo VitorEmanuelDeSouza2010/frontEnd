@@ -16,7 +16,8 @@ export default async function AlunosPage() {
                         <AlunoItem
                         key={aluno.id}
                         nome={aluno.nome}
-                        id={aluno.id} />
+                        id={aluno.id}
+                        />
                     ))}
                 </ul>
             </div>
