@@ -4,6 +4,8 @@ import { Aluno } from "@/interfaces/alunos";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getAluno } from "./actions";
+import { PenBox } from "lucide-react";
+import Link from "next/link";
 
 export default function AlunosPage() {
     const { id } = useParams();
@@ -15,8 +17,13 @@ export default function AlunosPage() {
 
     return (
         <div className="mt-20 flex flex-col items-center">
-            <p className="text-white mt-10 flex flex-col items-center">{aluno.nome}</p>
-            <p className="text-white mt-10 flex flex-col items-center">{aluno.idade}</p>
+            <div className="flex gap-1">
+                <p className="text-white mt-10 flex flex-col items-center">{aluno.nome}</p>
+                <Link href={`/aluno/${id}/editar`}>
+                    <PenBox />
+                </Link>
+                <p className="text-white mt-10 flex flex-col items-center">{aluno.idade}</p>
+            </div>
         </div>
     )
 }
