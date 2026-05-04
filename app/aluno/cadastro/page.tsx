@@ -10,6 +10,7 @@ export default function AlunoCadastroPage() {
     const [idade, setIdade] = useState("");
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
+    const [curso, setCurso] = useState("");
 
     async function handleSubmit(e: SubmitEvent) {
         e.preventDefault();
@@ -18,6 +19,7 @@ export default function AlunoCadastroPage() {
             idade: Number(idade),
             cpf: Number(cpf),
             email,
+            curso,
         });
 
         if (!response) {
@@ -66,6 +68,14 @@ export default function AlunoCadastroPage() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <input 
+                className="border border-black text-black pl-1"
+                type="text"
+                placeholder="Curso"
+                value={curso}
+                onChange={(e) => setCurso(e.target.value)}
                 />
 
                 <button className="bg-black text-white py-2 rounded-lg" type="submit">Cadastrar</button>

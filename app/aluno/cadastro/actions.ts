@@ -10,6 +10,7 @@ interface CreateAluno {
     idade: number;
     cpf: number;
     email: string;
+    curso: string;
 }
 
 export async function createAluno(aluno: CreateAluno) {

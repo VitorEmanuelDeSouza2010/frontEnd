@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Trash } from "lucide-react";
-import { deleteAluno } from "@/app/alunos/actions";
+import { deleteCurso } from "@/app/cursos/actions";
 import { useRouter } from "next/navigation";
 
 interface Props {
@@ -10,17 +10,17 @@ interface Props {
     nome: string;
 }
 
-export default function AlunoItem({ id, nome }: Props) {
+export default function CursoItem({ id, nome }: Props) {
     const router = useRouter();
 
     function handleDelete() {
-        deleteAluno(id);
+        deleteCurso(id);
         router.refresh();
     }
 
     return (
         <div className="flex gap-5">
-            <Link href={`/aluno/${id}`}>
+            <Link href={`/curso/${id}`}>
                 <li className="text-red-600 border-black border-2">{nome}</li>
             </Link>
             <button
