@@ -22,7 +22,7 @@ export default async function CursosPage() {
                 </ul>
             </div>
 
-            <Link href="/aluno/cadastro" className="px-5 py-2 bg-white text-black mt-5 rounded-lg">
+            <Link href="/curso/cadastro" className="px-5 py-2 bg-white text-black mt-5 rounded-lg">
             CURSOS
             </Link>
         </div>
