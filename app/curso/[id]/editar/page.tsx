@@ -33,15 +33,16 @@ export default function CursosPage() {
     return (
         <form className="mt-20 flex flex-col items-center"
             onSubmit={handleUpdate}>
-            <input value={curso.nome} onChange={(e) => handleChange(e.target.value, "nome")} className="text-white mt-10 flex flex-col items-center" />
+                <div className="bg-white rounded-lg shadow-md shadow-white">
+                    <div className="m-5">
+                        <input value={curso.nome} onChange={(e) => handleChange(e.target.value, "nome")} className="text-black mt-10 flex flex-col items-center border bg-gray-400" />
+                        <input value={curso.professor} onChange={(e) => handleChange(e.target.value, "professor")} className="text-black mt-10 flex flex-col items-center border bg-gray-400" />
+                        <input value={curso.cargaHoraria} onChange={(e) => handleChange(e.target.value, "cargaHoraria")} className="text-black mt-10 flex flex-col items-center border bg-gray-400" />
+                        <input value={curso.descricao} onChange={(e) => handleChange(e.target.value, "descricao")} className="text-black mt-10 flex flex-col items-center border bg-gray-400" />
+                    </div>
+                </div>
 
-            <input value={curso.professor} onChange={(e) => handleChange(e.target.value, "professor")} className="text-white mt-10 flex flex-col items-center" />
-
-            <input value={curso.cargaHoraria} onChange={(e) => handleChange(e.target.value, "cargaHoraria")} className="text-white mt-10 flex flex-col items-center" />
-
-            <input value={curso.descricao} onChange={(e) => handleChange(e.target.value, "descricao")} className="text-white mt-10 flex flex-col items-center" />
-
-            <button className="bg-black text-white rounded-x1 px-10 py-2 cursor-pointer hover:opacity-80">Editar</button>
+            <button className="bg-white mt-5 rounded-lg shadow-md shadow-white text-black rounded-x1 px-10 py-2 cursor-pointer hover:opacity-80">Editar</button>
         </form>
     )
 }

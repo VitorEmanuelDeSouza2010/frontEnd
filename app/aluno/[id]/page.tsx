@@ -17,12 +17,12 @@ export default function AlunosPage() {
 
     return (
         <div className="mt-20 flex flex-col items-center">
-            <div className="flex gap-1">
-                <p className="text-white mt-10 flex flex-col items-center">{aluno.nome}</p>
+            <div className="flex bg-white rounded-lg shadow-md shadow-white">
                 <Link href={`/aluno/${id}/editar`}>
-                    <PenBox />
+                    <PenBox className="bg-gray-400 rounded"/>
                 </Link>
-                <p className="text-white mt-10 flex flex-col items-center">{aluno.idade}</p>
+                <p className="bg-gray-400 border rounded m-5 text-black mt-10 flex flex-col items-center">Nome: {aluno.nome}</p>
+                <p className="bg-gray-400 border rounded m-5 ml-6 text-black mt-10 flex flex-col items-center">Idade: {aluno.idade}</p>
             </div>
         </div>
     )

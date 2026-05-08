@@ -17,11 +17,11 @@ export default function CursosPage() {
 
     return (
         <div className="mt-20 flex flex-col items-center">
-            <div className="flex gap-1">
-                <p className="text-white mt-10 flex flex-col items-center">{curso.nome}</p>
+            <div className="flex gap-1 bg-white rounded-lg shadow-md shadow-white">
                 <Link href={`/curso/${id}/editar`}>
-                    <PenBox />
+                    <PenBox className="bg-gray-400 rounded"/>
                 </Link>
+                <p className="bg-gray-400 border rounded text-black m-5 mt-10 flex flex-col items-center">Curso: {curso.nome}</p>
             </div>
         </div>
     )

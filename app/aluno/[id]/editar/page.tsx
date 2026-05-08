@@ -33,12 +33,16 @@ export default function AlunosPage() {
     return (
         <form className="mt-20 flex flex-col items-center"
             onSubmit={handleUpdate}>
-            <input value={aluno.nome} onChange={(e) => handleChange(e.target.value, "nome")} className="text-white mt-10 flex flex-col items-center" />
-            <input value={aluno.email} onChange={(e) => handleChange(e.target.value, "email")} className="text-white mt-10 flex flex-col items-center" />
-            <input value={aluno.idade} onChange={(e) => handleChange(Number(e.target.value), "idade")} className="text-white mt-10 flex flex-col items-center" />
-            <input value={aluno.cpf} onChange={(e) => handleChange(Number(e.target.value), "cpf")} className="text-white mt-10 flex flex-col items-center" />
+            <div className="bg-white rounded-lg shadow-md shadow-white">
+                <div className="m-5">
+                    <input value={aluno.nome} onChange={(e) => handleChange(e.target.value, "nome")} className="text-black mt-10 flex flex-col items-center bg-gray-400 border" />
+                    <input value={aluno.email} onChange={(e) => handleChange(e.target.value, "email")} className="text-black mt-10 flex flex-col items-center bg-gray-400 border" />
+                    <input value={aluno.idade} onChange={(e) => handleChange(Number(e.target.value), "idade")} className="text-black mt-10 flex flex-col items-center bg-gray-400 border" />
+                    <input value={aluno.cpf} onChange={(e) => handleChange(Number(e.target.value), "cpf")} className="text-black mt-10 flex flex-col items-center bg-gray-400 border" />
+                </div>
+            </div>
 
-            <button className="bg-black text-white rounded-x1 px-10 py-2 cursor-pointer hover:opacity-80">Editar</button>
+            <button className="mt-5 bg-white rounded-lg shadow-md shadow-white text-black rounded-x1 px-10 py-2 cursor-pointer hover:opacity-80">Editar</button>
         </form>
     )
 }
